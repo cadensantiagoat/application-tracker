@@ -34,7 +34,7 @@ with st.form("add_job_form", clear_on_submit=True):
     company = st.text_input('Company', value=default_comp)
     link = st.text_input('Link', value=default_link)
     
-    # 'Plan to Apply' is first in the list, so it becomes the default automatically
+    # 'Plan to Apply' is first in the list so it becomes the default automatically
     status = st.selectbox('Status', ['Plan to Apply', 'Applied', 'Waiting for Response', 'Offered', 'Declined'])
     
     submitted = st.form_submit_button('Submit Job')
@@ -55,7 +55,7 @@ st.divider()
 st.subheader('Update Job Status')
 
 if data:
-    # Create a clean list of jobs for the dropdown (e.g., "Software Engineer at Intuit")
+    # Create a clean list of jobs for the dropdown 
     job_options = [f"{row['Position']} at {row['Company']}" for row in data]
     
     with st.form("update_status_form"):
